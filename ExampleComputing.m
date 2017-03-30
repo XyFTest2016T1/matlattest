@@ -239,7 +239,7 @@ H61 H62];
     [m,n]=size(H);
 for i=1:m
 niu=sum(H(i,:)~=0);
-cuttoff_PS(i,1)=chi2inv(0.975,niu);
+cuttoff_PS(i,1)=testchi2(0.975,niu);
 w(i,1)=min(1,(cuttoff_PS(i,1)./PSi(i))^2); %% downweight the outliers or leverage points
 end
 %%
