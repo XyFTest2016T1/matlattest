@@ -39,7 +39,7 @@ fclose(Outputlog);
 
 %% Step 2: Exmaple computation
 for n = 1: 1
-   ExampleComputing(118);
+   ExampleComputing(14);
 end
 %% Step 3: Write out the solution1.txt
 Inputraw = 'solutionraw1.txt';
