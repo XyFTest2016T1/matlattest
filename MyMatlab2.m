@@ -11,7 +11,7 @@ function MyMatlab2( )
 %% Step 4: Example computation
 starttime2 = cputime;
 for n = 1: 1
-   ExampleComputing(14);
+   %ExampleComputing(14);
 end
 %% Step 5: Write out the solution2.txt
 Inputraw = 'solutionraw2.txt';
