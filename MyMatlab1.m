@@ -21,7 +21,7 @@ close all;
 Nbus = 14; % Can choose 5, 14, 30, 118 for example computing
 %% Step 1: Reading the raw file
 starttime1 = cputime;
-Inputraw = [case 'powersystem.raw'];
+Inputraw = [pfocase 'powersystem.raw'];
 fp=fopen(Inputraw,'r');
 totalrows = numel(cell2mat(textscan(fp,'%1c%*[^\n]')));
 fclose(fp);
