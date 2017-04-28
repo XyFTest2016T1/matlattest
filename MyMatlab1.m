@@ -21,7 +21,7 @@ close all;
 Nbus = 14; % Can choose 5, 14, 30, 118 for example computing
 %% Step 1: Reading the raw file
 starttime1 = cputime;
-Inputraw = 'powersystem.raw';
+Inputraw = [case 'powersystem.raw'];
 fp=fopen(Inputraw,'r');
 totalrows = numel(cell2mat(textscan(fp,'%1c%*[^\n]')));
 fclose(fp);
@@ -42,11 +42,12 @@ for n = 1: 1
    %ExampleComputing(14);
 end
 %% Step 3: Write out the solution1.txt
-Inputraw = 'solutionraw1.txt';
-fp=fopen(Inputraw,'r');
+%Inputraw = 'solutionraw1.txt';
+pseudo_sol = [case 'solution1.txt']
+fp=fopen(pseudo_sol,'r');
 totalsolrows = numel(cell2mat(textscan(fp,'%1c%*[^\n]')));
 fclose(fp);
-fp=fopen(Inputraw,'r');
+fp=fopen(pseudo_sol,'r');
 fp_out = fopen('solution1.txt','w');
 for n = 1:totalsolrows
     currentline = fgetl(fp);
