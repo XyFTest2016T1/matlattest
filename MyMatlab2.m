@@ -14,8 +14,13 @@ for n = 1: 1
    %ExampleComputing(14);
 end
 %% Step 5: Write out the solution2.txt
-Inputraw = 'solutionraw2.txt';
-fp=fopen(Inputraw,'r');
+pseudo_sol = [case 'solution2.txt']
+fp=fopen(pseudo_sol,'r');
+totalsolrows = numel(cell2mat(textscan(fp,'%1c%*[^\n]')));
+fclose(fp);
+
+fp=fopen(pseudo_sol,'r');
+fp_out = fopen('solution2.txt','w');
 totalsolrows = numel(cell2mat(textscan(fp,'%1c%*[^\n]')));
 fclose(fp);
 fp=fopen(Inputraw,'r');
