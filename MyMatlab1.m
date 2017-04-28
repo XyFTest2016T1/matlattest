@@ -15,13 +15,12 @@ function MyMatlab1( )
 % Pacific Northwest National Laboratory
 % March 21, 2017
 
-clear all;
 close all;
 
 Nbus = 14; % Can choose 5, 14, 30, 118 for example computing
 %% Step 1: Reading the raw file
 starttime1 = cputime;
-Inputraw = [pfocase 'powersystem.raw'];
+Inputraw = [pfocase '/powersystem.raw'];
 fp=fopen(Inputraw,'r');
 totalrows = numel(cell2mat(textscan(fp,'%1c%*[^\n]')));
 fclose(fp);
@@ -43,7 +42,7 @@ for n = 1: 1
 end
 %% Step 3: Write out the solution1.txt
 %Inputraw = 'solutionraw1.txt';
-pseudo_sol = [pfocase 'solution1.txt']
+pseudo_sol = [pfocase '/solution1.txt']
 fp=fopen(pseudo_sol,'r');
 totalsolrows = numel(cell2mat(textscan(fp,'%1c%*[^\n]')));
 fclose(fp);
