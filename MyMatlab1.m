@@ -14,6 +14,9 @@ function MyMatlab1( )
 % Author: Dr. Xiaoyuan Fan
 % Pacific Northwest National Laboratory
 % March 21, 2017
+global pfotemp
+
+pfocase = pfotemp;
 
 close all;
 
@@ -42,7 +45,7 @@ for n = 1: 1
 end
 %% Step 3: Write out the solution1.txt
 %Inputraw = 'solutionraw1.txt';
-pseudo_sol = [pfocase '/solution1.txt']
+pseudo_sol = [pfocase '/solution1.txt'];
 fp=fopen(pseudo_sol,'r');
 totalsolrows = numel(cell2mat(textscan(fp,'%1c%*[^\n]')));
 fclose(fp);
