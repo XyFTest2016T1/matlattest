@@ -9,6 +9,11 @@ function MyMatlab2( )
 %MYMATLAB2 Summary of this function goes here
 %   Detailed explanation goes here
 %% Step 4: Example computation
+
+global pfotemp
+
+pfocase = pfotemp;
+
 starttime2 = cputime;
 for n = 1: 1
    %ExampleComputing(14);
