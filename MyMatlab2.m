@@ -14,7 +14,7 @@ for n = 1: 1
    %ExampleComputing(14);
 end
 %% Step 5: Write out the solution2.txt
-pseudo_sol = [pfocase 'solution2.txt']
+pseudo_sol = [pfocase '/solution2.txt']
 fp=fopen(pseudo_sol,'r');
 totalsolrows = numel(cell2mat(textscan(fp,'%1c%*[^\n]')));
 fclose(fp);
