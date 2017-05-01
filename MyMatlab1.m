@@ -6,6 +6,9 @@
 % March 21, 2017
 
 function MyMatlab1( )
+
+global pfotemp
+pfocase = pfotemp
 %MYMATLAB1 Summary of this function goes here
 %   Detailed explanation goes here
 %% 
@@ -14,11 +17,9 @@ function MyMatlab1( )
 % Author: Dr. Xiaoyuan Fan
 % Pacific Northwest National Laboratory
 % March 21, 2017
-global pfotemp
 
-pfocase = pfotemp;
-
-close all;
+%clear all;
+%close all;
 
 Nbus = 14; % Can choose 5, 14, 30, 118 for example computing
 %% Step 1: Reading the raw file
@@ -45,7 +46,7 @@ for n = 1: 1
 end
 %% Step 3: Write out the solution1.txt
 %Inputraw = 'solutionraw1.txt';
-pseudo_sol = [pfocase '/solution1.txt'];
+pseudo_sol = [pfocase '/solution1.txt']
 fp=fopen(pseudo_sol,'r');
 totalsolrows = numel(cell2mat(textscan(fp,'%1c%*[^\n]')));
 fclose(fp);
@@ -63,4 +64,3 @@ fprintf(fp_log,'%f\n',elapsedtime1);
 fclose(fp_log);
 
 end
-
